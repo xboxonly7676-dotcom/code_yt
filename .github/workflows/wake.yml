@@ -1,0 +1,15 @@
+name: Wake Codespace + Run Render
+on:
+  schedule:
+    - cron: "30 11 * * *" # 5 PM IST = 11:30 UTC
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake Codespace
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.
+             }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/user/codespaces/special-space-guacamole-r4v75vvj6p6ghvgx/start
