@@ -9,7 +9,6 @@ jobs:
       - name: Wake Codespace
         run: |
           curl -X POST \
-            -H "Authorization: token ${{ secrets.
-             }}" \
+            -H "Authorization: token ${{ secrets.GH_PAT }}" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/codespaces/special-space-guacamole-r4v75vvj6p6ghvgx/start
